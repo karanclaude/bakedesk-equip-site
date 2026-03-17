@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<header class="nav-island" id="nav-island">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Bake<em>Desk</em></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/bakery-ovens">Ovens</a>
+      <a href="/mixers-and-processors">Mixers</a>
+      <a href="/refrigeration">Refrigeration</a>
+      <a href="/restaurant-kitchen">Kitchen</a>
+      <a href="/small-equipment">Tools</a>
+      <a href="/blog">Guides</a>
+      <a href="/about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://wa.me/918826431351?text=Hi%2C%20I%27m%20interested%20in%20bakery%20equipment.%20Can%20you%20help%3F" class="nav-cta-btn" target="_blank" rel="noopener">
+        <span>Get a Quote</span>
+        <span class="btn-trail-sm">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="ham-line ham-line-1"></span>
+        <span class="ham-line ham-line-2"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+  <nav class="mobile-nav">
+    <a href="/bakery-ovens" class="mobile-nav-link" style="--i:0">Bakery Ovens</a>
+    <a href="/mixers-and-processors" class="mobile-nav-link" style="--i:1">Mixers &amp; Processors</a>
+    <a href="/refrigeration" class="mobile-nav-link" style="--i:2">Refrigeration</a>
+    <a href="/restaurant-kitchen" class="mobile-nav-link" style="--i:3">Restaurant Kitchen</a>
+    <a href="/small-equipment" class="mobile-nav-link" style="--i:4">Small Tools</a>
+    <a href="/blog" class="mobile-nav-link" style="--i:5">Buying Guides</a>
+    <a href="/about" class="mobile-nav-link" style="--i:6">About</a>
+    <a href="https://wa.me/918826431351?text=Hi%2C%20I%27m%20interested%20in%20bakery%20equipment.%20Can%20you%20help%3F" class="mobile-nav-link mobile-cta" style="--i:7" target="_blank" rel="noopener">WhatsApp Us Now →</a>
+  </nav>
+</div>

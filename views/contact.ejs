@@ -1,0 +1,141 @@
+<%- include('partials/header') %>
+
+<div class="page-hero">
+  <h1>Contact BakeDesk</h1>
+  <p>Get free equipment advice from our specialists. We respond within hours — usually faster.</p>
+</div>
+
+<section class="section">
+  <div class="section-inner" style="max-width:1000px;">
+
+    <!-- Quick Contact Options -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;margin-bottom:3rem;">
+      <a href="https://wa.me/918826431351?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20bakery%2Frestaurant%20equipment.%20Can%20you%20help%3F" class="card" style="text-align:center;background:linear-gradient(135deg,#25d366,#1fb855);color:#fff;border-color:transparent;" target="_blank" rel="noopener">
+        <div class="card-icon">&#128172;</div>
+        <h3 style="color:#fff;">WhatsApp</h3>
+        <p style="color:rgba(255,255,255,.85);">+91-8826431351<br>Fastest response</p>
+        <div style="color:#fff;font-weight:700;margin-top:.5rem;">Chat Now →</div>
+      </a>
+      <a href="tel:+918826431351" class="card" style="text-align:center;background:var(--charcoal);color:#fff;border-color:transparent;">
+        <div class="card-icon">&#128222;</div>
+        <h3 style="color:#fff;">Call Us</h3>
+        <p style="color:rgba(255,255,255,.85);">+91-8826431351<br>Mon-Sat, 9am-7pm</p>
+        <div style="color:var(--sage);font-weight:700;margin-top:.5rem;">Call Now →</div>
+      </a>
+      <div class="card" style="text-align:center;">
+        <div class="card-icon">&#128205;</div>
+        <h3>Visit Us</h3>
+        <p>Delhi, India<br>By appointment only</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="card-icon">&#9201;&#65039;</div>
+        <h3>Response Time</h3>
+        <p>WhatsApp: &lt;1 hour<br>Form: Within 4 hours</p>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Form -->
+      <div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--charcoal);margin-bottom:1.5rem;">Send Us a Message</h2>
+
+        <% if (typeof success !== 'undefined' && success) { %>
+        <div style="background:#f0fdf4;border:1px solid #22c55e;border-radius:8px;padding:1.5rem;text-align:center;margin-bottom:1.5rem;">
+          <div style="font-size:2rem;margin-bottom:.5rem;">&#9989;</div>
+          <h3 style="color:#166534;">Message Sent!</h3>
+          <p style="color:#166534;">We'll get back to you within 4 hours. For faster response, <a href="https://wa.me/918826431351?text=Hi%2C%20I%20just%20submitted%20a%20contact%20form.%20Can%20you%20help%20me%20with%20equipment%3F" style="color:#166534;" target="_blank" rel="noopener">WhatsApp us directly</a>.</p>
+        </div>
+        <% } %>
+
+        <form class="contact-form" action="/contact" method="POST">
+          <div>
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" required>
+          </div>
+          <div>
+            <label for="phone">Phone / WhatsApp Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+          </div>
+          <div>
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="e.g. Mumbai, Delhi, Bangalore">
+          </div>
+          <div>
+            <label for="business">Type of Business *</label>
+            <select id="business" name="business" required>
+              <option value="">— Select One —</option>
+              <option>New Bakery Setup</option>
+              <option>Existing Bakery Expansion</option>
+              <option>Restaurant / QSR</option>
+              <option>Cloud Kitchen</option>
+              <option>Cafe / Coffee Shop</option>
+              <option>Hotel / Catering</option>
+              <option>Home Baker Scaling Up</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="equipment">Equipment You're Looking For</label>
+            <textarea id="equipment" name="equipment" placeholder="e.g. I need a deck oven for a new bakery in Mumbai. Budget around 2 lakhs. Daily production around 100 loaves."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message →</button>
+          <p style="font-size:.8rem;color:var(--ink-light);margin-top:.8rem;text-align:center;">We'll respond via WhatsApp or call within 4 hours</p>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--charcoal);margin-bottom:1.5rem;">Get in Touch</h2>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">&#128172;</div>
+          <div class="contact-info-text">
+            <h4>WhatsApp (Fastest)</h4>
+            <p><a href="https://wa.me/918826431351?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20equipment.%20Can%20you%20help%3F" target="_blank" rel="noopener">+91-8826431351</a></p>
+            <p>Send photos of your space, describe your needs — we respond quickly</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">&#128222;</div>
+          <div class="contact-info-text">
+            <h4>Phone</h4>
+            <p><a href="tel:+918826431351">+91-8826431351</a></p>
+            <p>Monday to Saturday, 9:00 AM – 7:00 PM IST</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">&#128205;</div>
+          <div class="contact-info-text">
+            <h4>Location</h4>
+            <p>Delhi, India</p>
+            <p>Serving all of India — pan-India supplier network</p>
+          </div>
+        </div>
+
+        <div style="background:var(--cream-warm);border:1px solid rgba(30,28,26,0.08);border-radius:12px;padding:1.5rem;margin-top:1.5rem;">
+          <h3 style="font-size:1rem;font-weight:700;color:var(--charcoal);margin-bottom:1rem;">What Happens After You Contact Us?</h3>
+          <ol style="padding-left:1.5rem;font-size:.9rem;line-height:2;">
+            <li>We review your requirements</li>
+            <li>Our specialist contacts you within 4 hours</li>
+            <li>We understand your production needs and budget</li>
+            <li>We shortlist the right equipment options for you</li>
+            <li>We get you quotes from 2-3 vetted suppliers</li>
+            <li>You choose the best fit — no pressure</li>
+          </ol>
+        </div>
+
+        <div style="background:linear-gradient(135deg,var(--charcoal),var(--charcoal-mid));border-radius:12px;padding:1.5rem;margin-top:1.5rem;text-align:center;color:#fff;">
+          <h3 style="color:#fff;margin-bottom:.5rem;">Prefer to Just Browse?</h3>
+          <p style="color:rgba(255,255,255,.75);font-size:.9rem;margin-bottom:1rem;">Check out our buying guides before you reach out</p>
+          <a href="/blog" style="display:inline-block;background:var(--sage);color:#fff;padding:.6rem 1.5rem;border-radius:7px;font-weight:700;font-size:.9rem;text-decoration:none;">Read All Guides →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<%- include('partials/scripts') %>

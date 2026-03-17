@@ -1,0 +1,85 @@
+<script>
+(function() {
+  'use strict';
+
+  // Floating nav scroll effect
+  const navIsland = document.getElementById('nav-island');
+  if (navIsland) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 40) {
+        navIsland.classList.add('nav-scrolled');
+      } else {
+        navIsland.classList.remove('nav-scrolled');
+      }
+    }, { passive: true });
+  }
+
+  // Hamburger / Mobile overlay
+  const hamburger = document.getElementById('hamburger');
+  const overlay = document.getElementById('mobile-overlay');
+  let menuOpen = false;
+
+  function openMenu() {
+    menuOpen = true;
+    hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.classList.add('is-open');
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menuOpen = false;
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger && overlay) {
+    hamburger.addEventListener('click', function() {
+      menuOpen ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeMenu();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menuOpen) closeMenu();
+    });
+  }
+
+  // IntersectionObserver scroll reveal
+  const revealEls = document.querySelectorAll('.reveal-up');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = el.style.getPropertyValue('--delay') || '0ms';
+          el.style.transitionDelay = delay;
+          el.classList.add('revealed');
+          revealObs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function(el) {
+      revealObs.observe(el);
+    });
+  } else {
+    revealEls.forEach(function(el) { el.classList.add('revealed'); });
+  }
+
+  // FAQ toggle (for blog pages)
+  document.querySelectorAll('.faq-q, .faq_q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
